@@ -125,10 +125,18 @@
                 max-height: none;
                 border-radius: 0;
                 border: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /* Центрируем контент по вертикали */
+                padding-top: 40px;
+                padding-bottom: 20px;
             }
             #modal-image-container img {
-                max-height: 180px;
+                max-height: 160px; /* Еще немного уменьшил для баланса */
                 width: auto;
+            }
+            .form-container {
+                padding-top: 0 !important;
             }
         }
     </style>
@@ -190,13 +198,13 @@
         </section>
     </main>
 
-    <!-- MODAL (FULLY REWORKED FOR MOBILE) -->
+    <!-- MODAL -->
     <div id="order-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center">
         <div class="absolute inset-0 modal-blur md:block hidden" onclick="closeModal()"></div>
         <div class="bg-white w-full max-w-5xl md:rounded-[4rem] shadow-2xl relative z-10 overflow-hidden flex flex-col md:flex-row border-4 theme-border max-h-screen md:max-h-[90vh]">
             
             <!-- Close for Mobile -->
-            <button onclick="closeModal()" class="md:hidden absolute top-4 right-4 z-[110] bg-slate-100 w-10 h-10 rounded-full flex items-center justify-center font-bold text-slate-500">✕</button>
+            <button onclick="closeModal()" class="md:hidden absolute top-6 right-6 z-[110] bg-slate-100/50 backdrop-blur-md w-10 h-10 rounded-full flex items-center justify-center font-bold text-slate-600">✕</button>
 
             <!-- Media Section -->
             <div class="w-full md:w-1/2 p-4 md:p-12 flex flex-col items-center justify-center bg-white border-b md:border-b-0 md:border-r border-slate-50 shrink-0">
@@ -205,7 +213,7 @@
             </div>
 
             <!-- Form Section -->
-            <div class="w-full md:w-1/2 p-6 md:p-10 overflow-y-auto bg-white flex-1">
+            <div class="w-full md:w-1/2 p-6 md:p-10 overflow-y-auto bg-white flex-1 form-container">
                 <div class="mb-5">
                     <p class="text-[9px] font-black uppercase text-slate-400 mb-3 tracking-widest">01. Color</p>
                     <div id="modal-color-picker" class="flex flex-wrap gap-3"></div>
